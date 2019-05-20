@@ -92,6 +92,7 @@ class Item extends Component<ItemProps> {
   }
 
   handleClick = (e: React.MouseEvent) => {
+    console.log('onclick...props', this.props);
     if (this.stayOpenOnClick) {
       e.stopPropagation();
     }
