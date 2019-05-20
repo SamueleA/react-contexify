@@ -39,7 +39,7 @@ const MyAwesomeMenu: React.SFC<{
   onClick: (p: any) => void;
 }> = ({ theme, animation, onClick }) => (
   <Menu id={menuId} theme={theme} animation={animation}>
-    <Item onClick={onClick}>
+    <Item onClick={onClick} closeOnClick={false}>
       <span role="role">💩</span>
       Foo
     </Item>
