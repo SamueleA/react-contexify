@@ -65,7 +65,13 @@ class Item extends Component<ItemProps> {
 
   constructor(props: ItemProps) {
     super(props);
-    const { disabled, nativeEvent, propsFromTrigger, data, closeOnClick } = this.props;
+    const {
+      disabled,
+      nativeEvent,
+      propsFromTrigger,
+      data,
+      closeOnClick
+    } = this.props;
 
     this.isDisabled =
       typeof disabled === 'function'
@@ -75,12 +81,14 @@ class Item extends Component<ItemProps> {
           })
         : disabled;
 
-    this.stayOpenOnClick = this.isDisabled ||
+    this.stayOpenOnClick =
+      this.isDisabled ||
       !(typeof closeOnClick === 'function'
         ? closeOnClick({
-          event: nativeEvent as TriggerEvent,
-          props: { ...propsFromTrigger, ...data }
-        }) : closeOnClick);
+            event: nativeEvent as TriggerEvent,
+            props: { ...propsFromTrigger, ...data }
+          })
+        : closeOnClick);
   }
 
   handleClick = (e: React.MouseEvent) => {
